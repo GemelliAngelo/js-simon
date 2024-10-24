@@ -6,6 +6,7 @@ const gameNumber3El = document.getElementById("number-3");
 const gameNumber4El = document.getElementById("number-4");
 const gameNumber5El = document.getElementById("number-5");
 const gameButtonEl = document.getElementById("game-button");
+const gameResult = document.getElementById("result");
 let seconds = 5;
 
 // * FUNZIONE RANDOMICA
@@ -21,6 +22,26 @@ const emptyValue = () => {
   gameNumber3El.value = "";
   gameNumber4El.value = "";
   gameNumber5El.value = "";
+};
+
+// * FUNZIONE PER CONTROLLARE I DATI CON IL BOTTONE
+const buttonVerify = () => {
+  gameButtonEl.addEventListener("click", () => {
+    userNumbers = [
+      gameNumber1El.value,
+      gameNumber2El.value,
+      gameNumber3El.value,
+      gameNumber4El.value,
+      gameNumber5El.value,
+    ];
+
+    for (let i = 0; i < userNumbers.length; i++) {
+      if (gameNumbers.includes(userNumbers[i])) {
+        gameResult.innerText = "HAI VINTO";
+      } else console.log("HAI PERSO");
+    }
+    emptyValue();
+  });
 };
 
 // * GENERO I NUMERI E LI STAMPO IN PAGINA
@@ -62,29 +83,12 @@ const countdown = () => {
     gameTimeEl.innerText = "Tempo Scaduto!";
     userInput();
     clearInterval(countdownInterval);
+    buttonVerify();
   } else gameTimeEl.innerText = seconds--;
 };
 
 // * SETTO L'INTERVALLO E AVVIO IL COUNTDOWN
-("disabled");
 countdown();
 const countdownInterval = setInterval(countdown, 1000);
-
-// * CONTROLLO I DATI CON IL BOTTONE
-gameButtonEl.addEventListener("click", () => {
-  userNumbers = [
-    gameNumber1El.value,
-    gameNumber2El.value,
-    gameNumber3El.value,
-    gameNumber4El.value,
-    gameNumber5El.value,
-  ];
-
-  for (let i = 0; i < userNumbers.length; i++) {
-    if (gameNumbers.includes(userNumbers[i])) {
-      //   emptyValue();
-    } else console.log("HAI PERSO");
-  }
-});
 
 console.log(userNumbers);
