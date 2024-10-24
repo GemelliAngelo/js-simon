@@ -37,14 +37,14 @@ const buttonVerify = () => {
 
     console.log(userNumbers);
 
+    let numberCounter = 0;
     for (let i = 0; i < gameNumbers.length; i++) {
-      let numberCounter = 0;
       if (gameNumbers.includes(userNumbers[i])) {
         numberCounter++;
-        emptyValue();
       }
-      gameResult.innerText = `HAI INDOVINATO ${numberCounter} PAROLE`;
     }
+    gameResult.innerText = `HAI INDOVINATO ${numberCounter} NUMERI`;
+    emptyValue();
   });
 };
 
