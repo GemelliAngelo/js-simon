@@ -7,7 +7,7 @@ const gameNumber4El = document.getElementById("number-4");
 const gameNumber5El = document.getElementById("number-5");
 const gameButtonEl = document.getElementById("game-button");
 const gameResult = document.getElementById("result");
-let seconds = 5;
+let seconds = 30;
 
 // * FUNZIONE RANDOMICA
 function random(min, max) {
