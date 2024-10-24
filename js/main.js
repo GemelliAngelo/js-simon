@@ -6,8 +6,8 @@ const gameNumber4El = document.getElementById("number-4");
 const gameNumber5El = document.getElementById("number-5");
 
 // * GENERO I NUMERI E LI STAMPO IN PAGINA
-gameNumber1El.innerText = Math.floor(Math.random() * 100) + 1;
-gameNumber2El.innerText = Math.floor(Math.random() * 100) + 1;
-gameNumber3El.innerText = Math.floor(Math.random() * 100) + 1;
-gameNumber4El.innerText = Math.floor(Math.random() * 100) + 1;
-gameNumber5El.innerText = Math.floor(Math.random() * 100) + 1;
+gameNumber1El.innerText = Math.floor(Math.random() * 99) + 1;
+gameNumber2El.innerText = Math.floor(Math.random() * 99) + 1;
+gameNumber3El.innerText = Math.floor(Math.random() * 99) + 1;
+gameNumber4El.innerText = Math.floor(Math.random() * 99) + 1;
+gameNumber5El.innerText = Math.floor(Math.random() * 99) + 1;
