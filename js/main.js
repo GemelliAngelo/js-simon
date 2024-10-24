@@ -14,6 +14,15 @@ function random(min, max) {
   return randomNumber;
 }
 
+// * FUNZIONE SVUOTAMENTO
+const emptyValue = () => {
+  gameNumber1El.value = "";
+  gameNumber2El.value = "";
+  gameNumber3El.value = "";
+  gameNumber4El.value = "";
+  gameNumber5El.value = "";
+};
+
 // * GENERO I NUMERI E LI STAMPO IN PAGINA
 gameNumber1El.value = random(1, 100);
 gameNumber2El.value = random(1, 100);
@@ -30,7 +39,9 @@ const gameNumbers = [
   gameNumber5El.value,
 ];
 
-const userNumbers = [];
+console.log(gameNumbers);
+
+let userNumbers = [];
 
 // * GENERO FUNZIONE INPUT
 const userInput = () => {
@@ -42,11 +53,7 @@ const userInput = () => {
   gameNumber5El.removeAttribute("disabled");
 
   //  * SVUOTO GLI INPUT
-  gameNumber1El.value = "";
-  gameNumber2El.value = "";
-  gameNumber3El.value = "";
-  gameNumber4El.value = "";
-  gameNumber5El.value = "";
+  emptyValue();
 };
 
 // * GENERO IL COUNTDOWN
@@ -63,4 +70,21 @@ const countdown = () => {
 countdown();
 const countdownInterval = setInterval(countdown, 1000);
 
-// *
+// * CONTROLLO I DATI CON IL BOTTONE
+gameButtonEl.addEventListener("click", () => {
+  userNumbers = [
+    gameNumber1El.value,
+    gameNumber2El.value,
+    gameNumber3El.value,
+    gameNumber4El.value,
+    gameNumber5El.value,
+  ];
+
+  for (let i = 0; i < userNumbers.length; i++) {
+    if (gameNumbers.includes(userNumbers[i])) {
+      //   emptyValue();
+    } else console.log("HAI PERSO");
+  }
+});
+
+console.log(userNumbers);
