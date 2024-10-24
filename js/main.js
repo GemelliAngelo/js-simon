@@ -37,7 +37,7 @@ const buttonVerify = () => {
 
     console.log(userNumbers);
 
-    for (let i = 0; i < userNumbers.length; i++) {
+    for (let i = 0; i < gameNumbers.length; i++) {
       let numberCounter = 0;
       if (gameNumbers.includes(userNumbers[i])) {
         numberCounter++;
