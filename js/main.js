@@ -35,12 +35,16 @@ const buttonVerify = () => {
       gameNumber5El.value,
     ];
 
+    console.log(userNumbers);
+
     for (let i = 0; i < userNumbers.length; i++) {
+      let numberCounter = 0;
       if (gameNumbers.includes(userNumbers[i])) {
-        gameResult.innerText = "HAI VINTO";
-      } else console.log("HAI PERSO");
+        numberCounter++;
+        emptyValue();
+      }
+      gameResult.innerText = `HAI INDOVINATO ${numberCounter} PAROLE`;
     }
-    emptyValue();
   });
 };
 
@@ -90,5 +94,3 @@ const countdown = () => {
 // * SETTO L'INTERVALLO E AVVIO IL COUNTDOWN
 countdown();
 const countdownInterval = setInterval(countdown, 1000);
-
-console.log(userNumbers);
