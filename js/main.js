@@ -35,8 +35,6 @@ const buttonVerify = () => {
       gameNumber5El.value,
     ];
 
-    console.log(userNumbers);
-
     let numberCounter = 0;
     for (let i = 0; i < gameNumbers.length; i++) {
       if (gameNumbers.includes(userNumbers[i])) {
@@ -63,8 +61,6 @@ const gameNumbers = [
   gameNumber4El.value,
   gameNumber5El.value,
 ];
-
-console.log(gameNumbers);
 
 let userNumbers = [];
 
